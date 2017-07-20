@@ -400,4 +400,178 @@
     [self setNeedsDisplay];
 }
 
+#pragma mark - 链式属性
+
+/// 页码数量
+- (SYPageControl *(^)(NSInteger pages))pages
+{
+    return ^(NSInteger pages) {
+        self.numberOfPages = pages;
+        return self;
+    };
+}
+
+/// 页码当前页
+- (SYPageControl *(^)(NSInteger page))page
+{
+    return ^(NSInteger page) {
+        self.currentPage = page;
+        return self;
+    };
+}
+
+/// 页码单个时是否隐藏
+- (SYPageControl *(^)(BOOL hidden))hidesPageWhileSingle
+{
+    return ^(BOOL hidden) {
+        self.hidesForSinglePage = hidden;
+        return self;
+    };
+}
+
+/// 页码非高亮颜色
+- (SYPageControl *(^)(UIColor *color))pageColor
+{
+    return ^(UIColor *color) {
+        self.pageIndicatorColor = color;
+        return self;
+    };
+}
+
+/// 页码高亮颜色
+- (SYPageControl *(^)(UIColor *color))currentPageColor
+{
+    return ^(UIColor *color) {
+        self.currentPageIndicatorColor = color;
+        return self;
+    };
+}
+
+/// 页码非高亮图标
+- (SYPageControl *(^)(UIImage *image))pageImage
+{
+    return ^(UIImage *image) {
+        self.pageIndicatorImage = image;
+        return self;
+    };
+}
+
+/// 页码高亮图标
+- (SYPageControl *(^)(UIImage *image))currentPageImage
+{
+    return ^(UIImage *image) {
+        self.currentPageIndicatorImage = image;
+        return self;
+    };
+}
+
+/// 页码显示样式
+- (SYPageControl *(^)(SYPageControlType type))pageType
+{
+    return ^(SYPageControlType type) {
+        self.pageControlType = type;
+        return self;
+    };
+}
+
+/// 页码对齐方式
+- (SYPageControl *(^)(SYPageControlAlignment alignment))pageAlignment
+{
+    return ^(SYPageControlAlignment alignment) {
+        self.pageControlAlignment = alignment;
+        return self;
+    };
+}
+
+/// 页码高亮时放大
+- (SYPageControl *(^)(CGFloat scale))pageScale
+{
+    return ^(CGFloat scale) {
+        self.transformScale = scale;
+        return self;
+    };
+}
+
+/// 页码序号是否显示
+- (SYPageControl *(^)(BOOL show))showPageIndex
+{
+    return ^(BOOL show) {
+        self.showPageNumber = show;
+        return self;
+    };
+}
+
+/// 页码序号非高亮时颜色
+- (SYPageControl *(^)(UIColor *color))pageIndexColor
+{
+    return ^(UIColor *color) {
+        self.pageNumberColor = color;
+        return self;
+    };
+}
+
+/// 页码序号高亮时颜色
+- (SYPageControl *(^)(UIColor *color))currentPageIndexColor
+{
+    return ^(UIColor *color) {
+        self.currentPageNumberColor = color;
+        return self;
+    };
+}
+
+/// 页码序号非高亮时字体大小
+- (SYPageControl *(^)(UIFont *font))pageIndexFont
+{
+    return ^(UIFont *font) {
+        self.pageNumberFont = font;
+        return self;
+    };
+}
+
+/// 页码高亮时字体大小
+- (SYPageControl *(^)(UIFont *font))currentPageIndexFont
+{
+    return ^(UIFont *font) {
+        self.currentPageNumberFont = font;
+        return self;
+    };
+}
+
+/// 页码间距
+- (SYPageControl *(^)(CGFloat margin))pageMarginX
+{
+    return ^(CGFloat margin) {
+        self.pageMargin = margin;
+        return self;
+    };
+}
+
+/// 页码高
+- (SYPageControl *(^)(CGFloat height))pageHeight
+{
+    return ^(CGFloat height) {
+        self.pageSizeHeight = height;
+        return self;
+    };
+}
+
+/// 页码宽
+- (SYPageControl *(^)(CGFloat width))pageWidth
+{
+    return ^(CGFloat width) {
+        self.pageSizeWidth = width;
+        return self;
+    };
+}
+
+/// 页码是否适配图标大小
+- (SYPageControl *(^)(BOOL autoresizing))autoresizingImage
+{
+    return ^(BOOL autoresizing) {
+        self.shouldAutoresizingImage = autoresizing;
+        return self;
+    };
+}
+
+
 @end

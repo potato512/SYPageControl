@@ -83,4 +83,64 @@ typedef NS_ENUM(NSInteger, SYPageControlType)
 @property (nonatomic, assign) BOOL shouldAutoresizingImage;
 
 
+#pragma mark - 链式属性
+
+/// 页码数量
+- (SYPageControl *(^)(NSInteger pages))pages;
+
+/// 页码当前页
+- (SYPageControl *(^)(NSInteger page))page;
+
+/// 页码单个时是否隐藏
+- (SYPageControl *(^)(BOOL hidden))hidesPageWhileSingle;
+
+/// 页码非高亮颜色
+- (SYPageControl *(^)(UIColor *color))pageColor;
+
+/// 页码高亮颜色
+- (SYPageControl *(^)(UIColor *color))currentPageColor;
+
+/// 页码非高亮图标
+- (SYPageControl *(^)(UIImage *image))pageImage;
+
+/// 页码高亮图标
+- (SYPageControl *(^)(UIImage *image))currentPageImage;
+
+/// 页码显示样式
+- (SYPageControl *(^)(SYPageControlType type))pageType;
+
+/// 页码对齐方式
+- (SYPageControl *(^)(SYPageControlAlignment alignment))pageAlignment;
+
+/// 页码高亮时放大
+- (SYPageControl *(^)(CGFloat scale))pageScale;
+
+/// 页码序号是否显示
+- (SYPageControl *(^)(BOOL show))showPageIndex;
+
+/// 页码序号非高亮时颜色
+- (SYPageControl *(^)(UIColor *color))pageIndexColor;
+
+/// 页码序号高亮时颜色
+- (SYPageControl *(^)(UIColor *color))currentPageIndexColor;
+
+/// 页码序号非高亮时字体大小
+- (SYPageControl *(^)(UIFont *font))pageIndexFont;
+
+/// 页码高亮时字体大小
+- (SYPageControl *(^)(UIFont *font))currentPageIndexFont;
+
+/// 页码间距
+- (SYPageControl *(^)(CGFloat margin))pageMarginX;
+
+/// 页码高
+- (SYPageControl *(^)(CGFloat height))pageHeight;
+
+/// 页码宽
+- (SYPageControl *(^)(CGFloat width))pageWidth;
+
+/// 页码是否适配图标大小
+- (SYPageControl *(^)(BOOL autoresizing))autoresizingImage;
+
+
 @end

@@ -72,6 +72,14 @@ pageControl4.shouldAutoresizingImage = YES;
 
 ~~~
 
+~~~ javascript
+// 或使用链式属性设置
+SYPageControl *pageControl = [[SYPageControl alloc] initWithFrame:CGRectMake(10.0, 10.0, (self.view.frame.size.width - 10.0 * 2), 30.0)];
+[self.view addSubview:pageControl];
+pageControl.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.1];
+pageControl.pages(15).page(10).pageScale(1.5).showPageIndex(YES).pageIndexColor([UIColor blackColor]).currentPageIndexColor([UIColor whiteColor]).pageAlignment(SYPageControlAlignmentEqual).pageType(SYPageControlTypeSquare).pageColor([UIColor whiteColor]).currentPageColor([UIColor blackColor]).pageHeight(15.0).pageWidth(30.0);
+~~~
+
 > 使用注意
 > * 设置了图标，则颜色失效
 > * 设置图标时，显示样式必须为 SYPageControlTypeImage

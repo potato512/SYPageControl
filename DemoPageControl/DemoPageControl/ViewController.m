@@ -182,6 +182,11 @@
     pageControl11.hidesForSinglePage = YES;
     
     currentView = pageControl11;
+    
+    SYPageControl *pageControl12 = [[SYPageControl alloc] initWithFrame:CGRectMake(10.0, (currentView.frame.origin.y + currentView.frame.size.height + 10.0), (self.view.frame.size.width - 10.0 * 2), 30.0)];
+    [self.view addSubview:pageControl12];
+    pageControl12.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.1];
+    pageControl12.pages(15).page(10).pageScale(1.5).showPageIndex(YES).pageIndexColor([UIColor blackColor]).currentPageIndexColor([UIColor whiteColor]).pageAlignment(SYPageControlAlignmentEqual).pageType(SYPageControlTypeSquare).pageColor([UIColor whiteColor]).currentPageColor([UIColor blackColor]).pageHeight(15.0).pageWidth(30.0);
 }
 
 
