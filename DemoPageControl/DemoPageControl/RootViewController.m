@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "ViewController.h"
+#import "ImageVC.h"
 
 @interface RootViewController ()
 
@@ -21,7 +22,9 @@
     
     self.title = @"pageControl";
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"click" style:UIBarButtonItemStyleDone target:self action:@selector(buttonClick)];
+    UIBarButtonItem *pageItem = [[UIBarButtonItem alloc] initWithTitle:@"page" style:UIBarButtonItemStyleDone target:self action:@selector(pageClick)];
+    UIBarButtonItem *imageItem = [[UIBarButtonItem alloc] initWithTitle:@"image" style:UIBarButtonItemStyleDone target:self action:@selector(imageClick)];
+    self.navigationItem.rightBarButtonItems = @[pageItem, imageItem];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,9 +32,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)buttonClick
+- (void)pageClick
 {
     ViewController *nextVC = [ViewController new];
+    [self.navigationController pushViewController:nextVC animated:YES];
+}
+
+- (void)imageClick
+{
+    ImageVC *nextVC = [ImageVC new];
     [self.navigationController pushViewController:nextVC animated:YES];
 }
 

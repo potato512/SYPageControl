@@ -21,6 +21,8 @@
     
     self.title = @"pageControl";
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"reload" style:UIBarButtonItemStyleDone target:self action:@selector(reloadClick)];
+    
     [self setUI];
 }
 
@@ -44,13 +46,19 @@
     NSLog(@"%@ 被释放了~", [self class]);
 }
 
+- (void)reloadClick
+{
+    SYPageControl *pageControl = (SYPageControl *)[self.view viewWithTag:10000];
+    pageControl.pages(11).page(10).pageScale(1.2).showPageIndex(YES).pageIndexColor([UIColor lightGrayColor]).currentPageIndexColor([UIColor redColor]).pageAlignment(SYPageControlAlignmentEqual).pageType(SYPageControlTypeImage).pageImage([UIImage imageNamed:@"b"]).currentPageImage([UIImage imageNamed:@"b-h"]);
+}
+
 - (void)setUI
 {
     UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(10.0, 10.0, (self.view.frame.size.width - 10.0 * 2), 30.0)];
     [self.view addSubview:pageControl];
     pageControl.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.2];
     pageControl.numberOfPages = 10;
-    pageControl.currentPage = 1;
+    pageControl.currentPage = 2;
     pageControl.pageIndicatorTintColor = [UIColor greenColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
     
@@ -58,6 +66,7 @@
     
     SYPageControl *pageControl2 = [[SYPageControl alloc] initWithFrame:CGRectMake(10.0, (currentView.frame.origin.y + currentView.frame.size.height + 10.0), (self.view.frame.size.width - 10.0 * 2), 30.0)];
     [self.view addSubview:pageControl2];
+    pageControl2.tag = 10000;
     pageControl2.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.1];
     pageControl2.numberOfPages = 10;
     pageControl2.currentPage = 2;

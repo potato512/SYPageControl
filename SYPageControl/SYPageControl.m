@@ -25,6 +25,8 @@
     self = [super initWithFrame:frame];
     if (self)
     {
+        self.backgroundColor = [UIColor clearColor];
+        
         self.clipsToBounds = YES;
         self.layer.masksToBounds = YES;
         
@@ -72,10 +74,18 @@
     // 初始化页签
     if ((self.pageNormals.count == 0 && 0 < _numberOfPages) || self.pageNormals.count != _numberOfPages)
     {
+        // 清空数组
         [self.pageNormals removeAllObjects];
         [self.pageSelecteds removeAllObjects];
         [self.labelNormals removeAllObjects];
         [self.labelSelecteds removeAllObjects];
+        // 清空子视图
+        [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:[UIImageView class]] || [obj isKindOfClass:[UILabel class]])
+            {
+                [obj removeFromSuperview];
+            }
+        }];
         
         for (int i = 0; i < _numberOfPages; i++)
         {
@@ -99,6 +109,7 @@
             [imageViewNormal addSubview:labelNormal];
             labelNormal.backgroundColor = [UIColor clearColor];
             labelNormal.textAlignment = NSTextAlignmentCenter;
+            labelNormal.adjustsFontSizeToFitWidth = YES;
             labelNormal.hidden = YES;
             
             [self.labelNormals addObject:labelNormal];
@@ -107,6 +118,7 @@
             [imageViewSelected addSubview:labelSelected];
             labelSelected.backgroundColor = [UIColor clearColor];
             labelSelected.textAlignment = NSTextAlignmentCenter;
+            labelSelected.adjustsFontSizeToFitWidth = YES;
             labelSelected.hidden = YES;
             
             [self.labelSelecteds addObject:labelSelected];
@@ -165,16 +177,7 @@
         }
         
         // 高亮页码显示，非高亮隐藏
-        NSInteger index = _currentPage - 1;
-        if (index < 0)
-        {
-            index = 0;
-        }
-        else if (index >= _numberOfPages)
-        {
-            index = _numberOfPages - 1;
-        }
-        if (idx == index)
+        if (idx == _currentPage)
         {
             imageViewNormal.hidden = YES;
             imageViewSelected.hidden = NO;
@@ -199,7 +202,7 @@
             labelNormal.frame = imageViewNormal.bounds;
             labelSelected.frame = imageViewSelected.bounds;
             
-            if (idx == index)
+            if (idx == _currentPage)
             {
                 labelNormal.hidden = YES;
                 labelSelected.hidden = NO;
@@ -310,13 +313,13 @@
 - (void)setCurrentPage:(NSInteger)currentPage
 {
     _currentPage = currentPage;
-    if (_currentPage < 1)
+    if (_currentPage <= 0)
     {
-        _currentPage = 1;
+        _currentPage = 0;
     }
-    else if (_currentPage > _numberOfPages)
+    else if (_currentPage >= _numberOfPages)
     {
-        _currentPage = _numberOfPages;
+        _currentPage = _numberOfPages - 1;
     }
     
     [self setNeedsDisplay];

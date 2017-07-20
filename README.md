@@ -85,5 +85,13 @@ pageControl.pages(15).page(10).pageScale(1.5).showPageIndex(YES).pageIndexColor(
 > * 设置图标时，显示样式必须为 SYPageControlTypeImage
 
 
-
+### 修改完善
+* 20170720
+  * 1.0.0 
+    * 添加源码
+  * 1.0.1 
+    * 修改页码数显示异常
+    * 页码序号自适应 adjustsFontSizeToFitWidth
+    * 重置视图时，清空子视图
+    * 默认透明背景色
 
