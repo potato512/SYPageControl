@@ -16,8 +16,11 @@
   * 页签数码
   * 高亮时放大
 
+
 效果图
+
 ![SYPageControl.gif](./SYPageControl.gif)
+
 
 代码示例
 ~~~ javascript
