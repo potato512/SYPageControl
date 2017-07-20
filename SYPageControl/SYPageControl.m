@@ -54,24 +54,28 @@
         _pageSizeWidth = 6.0;
         _shouldAutoresizingImage = NO;
         
-        [self setNeedsDisplay];
+//        [self setNeedsDisplay];
+        [self setNeedsLayout];
     }
     
     return self;
 }
 
-- (void)drawRect:(CGRect)rect
+// setNeedsDisplay
+//- (void)drawRect:(CGRect)rect
+//{
+//    [self reloadUIView];
+//}
+
+// setNeedsLayout
+- (void)layoutSubviews
 {
-    if (_hidesForSinglePage)
-    {
-        // 单页时，隐藏
-        [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            obj.hidden = YES;
-        }];
-        return;
-    }
-    
-    // 初始化页签
+    [self reloadUIView];
+}
+
+// 初始化页签视图
+- (void)initializeUIView
+{
     if ((self.pageNormals.count == 0 && 0 < _numberOfPages) || self.pageNormals.count != _numberOfPages)
     {
         // 清空数组
@@ -124,8 +128,11 @@
             [self.labelSelecteds addObject:labelSelected];
         }
     }
-    
-    // 重置页签
+}
+
+// 设置页签视图属性
+- (void)resetUIView
+{
     __block CGFloat originX = (self.frame.size.width - _pageMargin * (_numberOfPages - 1) - self.pageSizeWidth * _numberOfPages) / 2;
     CGFloat originY = (self.frame.size.height - self.pageSizeHeight) / 2;
     if (_pageControlAlignment == SYPageControlAlignmentLeft)
@@ -141,9 +148,9 @@
         _pageMargin = (self.frame.size.width - self.pageSizeWidth * _numberOfPages) / (_numberOfPages + 1);
         originX = _pageMargin;
     }
-
+    
     [self.pageNormals enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-
+        
         UIImageView *imageViewNormal = (UIImageView *)obj;
         imageViewNormal.backgroundColor = _pageIndicatorColor;
         imageViewNormal.hidden = NO;
@@ -171,7 +178,7 @@
         {
             imageViewNormal.backgroundColor = [UIColor clearColor];
             imageViewSelected.backgroundColor = [UIColor clearColor];
-
+            
             imageViewNormal.image = _pageIndicatorImage;
             imageViewSelected.image = _currentPageIndicatorImage;
         }
@@ -212,6 +219,25 @@
         // 高亮放大显示
         imageViewSelected.transform = CGAffineTransformScale(imageViewSelected.transform, _transformScale, _transformScale);
     }];
+}
+
+// 重置视图属性
+- (void)reloadUIView
+{
+    if (_hidesForSinglePage)
+    {
+        // 单页时，隐藏
+        [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            obj.hidden = YES;
+        }];
+        return;
+    }
+    
+    // 初始化页签视图
+    [self initializeUIView];
+    
+    // 设置页签视图属性
+    [self resetUIView];
 }
 
 #pragma mark - getter
@@ -307,7 +333,7 @@
 - (void)setNumberOfPages:(NSInteger)numberOfPages
 {
     _numberOfPages = numberOfPages;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setCurrentPage:(NSInteger)currentPage
@@ -322,7 +348,7 @@
         _currentPage = _numberOfPages - 1;
     }
     
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 
     [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.transform = CGAffineTransformIdentity;
@@ -332,19 +358,19 @@
 - (void)setHidesForSinglePage:(BOOL)hidesForSinglePage
 {
     _hidesForSinglePage = hidesForSinglePage;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setPageControlType:(SYPageControlType)pageControlType
 {
     _pageControlType = pageControlType;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setPageControlAlignment:(SYPageControlAlignment)pageControlAlignment
 {
     _pageControlAlignment = pageControlAlignment;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setTransformScale:(CGFloat)transformScale
@@ -358,49 +384,49 @@
     {
         _transformScale = 2.0;
     }
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setShowPageNumber:(BOOL)showPageNumber
 {
     _showPageNumber = showPageNumber;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setPageNumberColor:(UIColor *)pageNumberColor
 {
     _pageNumberColor = pageNumberColor;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setPageNumberFont:(UIFont *)pageNumberFont
 {
     _pageNumberFont = pageNumberFont;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setCurrentPageNumberColor:(UIColor *)currentPageNumberColor
 {
     _currentPageNumberColor = currentPageNumberColor;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setCurrentPageNumberFont:(UIFont *)currentPageNumberFont
 {
     _currentPageNumberFont = currentPageNumberFont;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setPageIndicatorImage:(UIImage *)pageIndicatorImage
 {
     _pageIndicatorImage = pageIndicatorImage;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 - (void)setCurrentPageIndicatorImage:(UIImage *)currentPageIndicatorImage
 {
     _currentPageIndicatorImage = currentPageIndicatorImage;
-    [self setNeedsDisplay];
+    [self setNeedsLayout];
 }
 
 #pragma mark - 链式属性
