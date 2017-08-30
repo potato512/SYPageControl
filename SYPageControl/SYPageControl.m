@@ -49,7 +49,7 @@
         _pageNumberFont = [UIFont systemFontOfSize:6.0];
         _currentPageNumberFont = [UIFont systemFontOfSize:6.0];
         
-        _pageMargin = 10.0;
+        _pageMargin = 6.0;
         _pageSizeHeight = 6.0;
         _pageSizeWidth = 6.0;
         _shouldAutoresizingImage = NO;
@@ -134,7 +134,14 @@
 - (void)resetUIView
 {
     __block CGFloat originX = (self.frame.size.width - _pageMargin * (_numberOfPages - 1) - self.pageSizeWidth * _numberOfPages) / 2;
+    
+    if (_pageControlType == SYPageControlTypeLine)
+    {
+        // 线条样式时，高度最大为2.0
+        self.pageSizeHeight = (2.0 <= self.pageSizeHeight ? 2.0 : self.pageSizeHeight);
+    }
     CGFloat originY = (self.frame.size.height - self.pageSizeHeight) / 2;
+    
     if (_pageControlAlignment == SYPageControlAlignmentLeft)
     {
         originX = _pageMargin;
@@ -147,6 +154,13 @@
     {
         _pageMargin = (self.frame.size.width - self.pageSizeWidth * _numberOfPages) / (_numberOfPages + 1);
         originX = _pageMargin;
+    }
+    else if (_pageControlAlignment == SYPageControlAlignmentBottom)
+    {
+        if (_pageControlType == SYPageControlTypeLine)
+        {
+            originY = (self.frame.size.height - self.pageSizeHeight);
+        }
     }
     
     [self.pageNormals enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -172,7 +186,8 @@
         }
         else if (_pageControlType == SYPageControlTypeLine)
         {
-            
+            // 线条样式时，不显示序号
+            _showPageNumber = NO;
         }
         else if (_pageControlType == SYPageControlTypeImage)
         {
@@ -285,7 +300,7 @@
     if (_pageControlType == SYPageControlTypeLine)
     {
         // 线条形
-        if (_pageSizeWidth <= _pageSizeHeight)
+        if (_pageSizeWidth < _pageSizeHeight)
         {
             _pageSizeWidth = (self.frame.size.width - _pageMargin * (_numberOfPages - 1)) / _numberOfPages;
         }
@@ -601,6 +616,5 @@
         return self;
     };
 }
-
 
 @end

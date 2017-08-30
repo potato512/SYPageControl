@@ -1,27 +1,27 @@
 //
-//  ImageVC.m
+//  TempViewController.m
 //  DemoPageControl
 //
-//  Created by zhangshaoyu on 2017/7/20.
+//  Created by zhangshaoyu on 2017/8/30.
 //  Copyright © 2017年 zhangshaoyu. All rights reserved.
 //
 
-#import "ImageVC.h"
+#import "TempViewController.h"
 #import "ImageView.h"
 
-@interface ImageVC ()
+@interface TempViewController ()
 
 @property (nonatomic, strong) ImageView *imageView;
 @property (nonatomic, strong) UIView *pageView;
 
 @end
 
-@implementation ImageVC
+@implementation TempViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     self.title = @"图片浏览";
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"reload" style:UIBarButtonItemStyleDone target:self action:@selector(reloadClick)];
@@ -67,7 +67,7 @@
     self.pageView.backgroundColor = [UIColor greenColor];
     SYPageControl *pageControl = [[SYPageControl alloc] initWithFrame:self.pageView.bounds];
     [self.pageView addSubview:pageControl];
-//    pageControl.backgroundColor = [UIColor clearColor];
+    //    pageControl.backgroundColor = [UIColor clearColor];
     pageControl.numberOfPages = 10;
 }
 

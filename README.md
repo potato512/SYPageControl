@@ -86,6 +86,12 @@ pageControl.pages(15).page(10).pageScale(1.5).showPageIndex(YES).pageIndexColor(
 
 
 ### 修改完善
+* 20170830
+  * 版本号：1.1.0
+  * 修改优化
+    * 线条样式时：线条长度异常处理
+    * 添加线条样式时底端对齐
+
 * 20170720
   * 1.0.0 
     * 添加源码

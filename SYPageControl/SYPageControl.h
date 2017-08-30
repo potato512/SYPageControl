@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+/// 页码对齐方式，默认SYPageControlAlignmentDefault
 typedef NS_ENUM(NSInteger, SYPageControlAlignment)
 {
     SYPageControlAlignmentDefault = 0,
@@ -19,8 +20,12 @@ typedef NS_ENUM(NSInteger, SYPageControlAlignment)
     SYPageControlAlignmentCenter = SYPageControlAlignmentDefault,
     
     SYPageControlAlignmentEqual = 4,
+    
+    /// SYPageControlTypeLine时有效
+    SYPageControlAlignmentBottom = 5,
 };
 
+/// 页码样式，默认SYPageControlTypeSquare
 typedef NS_ENUM(NSInteger, SYPageControlType)
 {
     SYPageControlTypeSquare = 0,
@@ -73,7 +78,7 @@ typedef NS_ENUM(NSInteger, SYPageControlType)
 /// 页码序号高亮时字体大小，默认6.0
 @property(nonatomic, strong) UIFont *currentPageNumberFont;
 
-/// 页码间距，默认10.0
+/// 页码间距，默认6.0
 @property(nonatomic, assign) CGFloat pageMargin;
 /// 页码大小-高，默认6.0
 @property(nonatomic, assign) CGFloat pageSizeHeight;

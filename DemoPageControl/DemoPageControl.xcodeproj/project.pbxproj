@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A78800671F5697AF002B42C9 /* CirclePointVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A78800661F5697AF002B42C9 /* CirclePointVC.m */; };
+		A788006A1F5697CD002B42C9 /* NumberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A78800691F5697CD002B42C9 /* NumberVC.m */; };
+		A788006D1F5697DF002B42C9 /* SquareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A788006C1F5697DF002B42C9 /* SquareVC.m */; };
+		A78800701F5697F2002B42C9 /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A788006F1F5697F2002B42C9 /* ImageVC.m */; };
+		A78800731F569805002B42C9 /* LineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A78800721F569805002B42C9 /* LineVC.m */; };
+		A78800771F5699CC002B42C9 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78800761F5699CC002B42C9 /* TempViewController.m */; };
+		A788007A1F569A11002B42C9 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A78800791F569A11002B42C9 /* ImageView.m */; };
 		A7AAB6F01F1E013E008262BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAB6EF1F1E013E008262BC /* main.m */; };
 		A7AAB6F31F1E013E008262BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAB6F21F1E013E008262BC /* AppDelegate.m */; };
 		A7AAB6F61F1E013E008262BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAB6F51F1E013E008262BC /* ViewController.m */; };
@@ -16,8 +23,6 @@
 		A7AAB7091F1E013E008262BC /* DemoPageControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAB7081F1E013E008262BC /* DemoPageControlTests.m */; };
 		A7AAB7141F1E013E008262BC /* DemoPageControlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAB7131F1E013E008262BC /* DemoPageControlUITests.m */; };
 		A7B5AE3A1F20480C008981A9 /* SYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5AE391F20480C008981A9 /* SYPageControl.m */; };
-		A7B5AE411F208434008981A9 /* ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5AE401F208434008981A9 /* ImageView.m */; };
-		A7B5AE441F20868F008981A9 /* ImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B5AE431F20868F008981A9 /* ImageVC.m */; };
 		A7B5AE4C1F208768008981A9 /* 01.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B5AE461F208768008981A9 /* 01.png */; };
 		A7B5AE4D1F208768008981A9 /* 02.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B5AE471F208768008981A9 /* 02.png */; };
 		A7B5AE4E1F208768008981A9 /* 03.png in Resources */ = {isa = PBXBuildFile; fileRef = A7B5AE481F208768008981A9 /* 03.png */; };
@@ -87,6 +92,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A78800651F5697AF002B42C9 /* CirclePointVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CirclePointVC.h; sourceTree = "<group>"; };
+		A78800661F5697AF002B42C9 /* CirclePointVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CirclePointVC.m; sourceTree = "<group>"; };
+		A78800681F5697CD002B42C9 /* NumberVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberVC.h; sourceTree = "<group>"; };
+		A78800691F5697CD002B42C9 /* NumberVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberVC.m; sourceTree = "<group>"; };
+		A788006B1F5697DF002B42C9 /* SquareVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SquareVC.h; sourceTree = "<group>"; };
+		A788006C1F5697DF002B42C9 /* SquareVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SquareVC.m; sourceTree = "<group>"; };
+		A788006E1F5697F2002B42C9 /* ImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVC.h; sourceTree = "<group>"; };
+		A788006F1F5697F2002B42C9 /* ImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVC.m; sourceTree = "<group>"; };
+		A78800711F569805002B42C9 /* LineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineVC.h; sourceTree = "<group>"; };
+		A78800721F569805002B42C9 /* LineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineVC.m; sourceTree = "<group>"; };
+		A78800751F5699CC002B42C9 /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
+		A78800761F5699CC002B42C9 /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
+		A78800781F569A11002B42C9 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
+		A78800791F569A11002B42C9 /* ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageView.m; sourceTree = "<group>"; };
 		A7AAB6EB1F1E013E008262BC /* DemoPageControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoPageControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AAB6EF1F1E013E008262BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7AAB6F11F1E013E008262BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,10 +124,6 @@
 		A7AAB7151F1E013E008262BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B5AE381F20480C008981A9 /* SYPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPageControl.h; sourceTree = "<group>"; };
 		A7B5AE391F20480C008981A9 /* SYPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPageControl.m; sourceTree = "<group>"; };
-		A7B5AE3F1F208434008981A9 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
-		A7B5AE401F208434008981A9 /* ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageView.m; sourceTree = "<group>"; };
-		A7B5AE421F20868F008981A9 /* ImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVC.h; sourceTree = "<group>"; };
-		A7B5AE431F20868F008981A9 /* ImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVC.m; sourceTree = "<group>"; };
 		A7B5AE461F208768008981A9 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
 		A7B5AE471F208768008981A9 /* 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02.png; sourceTree = "<group>"; };
 		A7B5AE481F208768008981A9 /* 03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03.png; sourceTree = "<group>"; };
@@ -186,6 +201,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A78800641F56976D002B42C9 /* SYPageControlVC */ = {
+			isa = PBXGroup;
+			children = (
+				A78800651F5697AF002B42C9 /* CirclePointVC.h */,
+				A78800661F5697AF002B42C9 /* CirclePointVC.m */,
+				A78800681F5697CD002B42C9 /* NumberVC.h */,
+				A78800691F5697CD002B42C9 /* NumberVC.m */,
+				A788006B1F5697DF002B42C9 /* SquareVC.h */,
+				A788006C1F5697DF002B42C9 /* SquareVC.m */,
+				A788006E1F5697F2002B42C9 /* ImageVC.h */,
+				A788006F1F5697F2002B42C9 /* ImageVC.m */,
+				A78800711F569805002B42C9 /* LineVC.h */,
+				A78800721F569805002B42C9 /* LineVC.m */,
+			);
+			path = SYPageControlVC;
+			sourceTree = "<group>";
+		};
+		A78800741F5699BB002B42C9 /* TempVC */ = {
+			isa = PBXGroup;
+			children = (
+				A78800751F5699CC002B42C9 /* TempViewController.h */,
+				A78800761F5699CC002B42C9 /* TempViewController.m */,
+				A78800781F569A11002B42C9 /* ImageView.h */,
+				A78800791F569A11002B42C9 /* ImageView.m */,
+			);
+			path = TempVC;
+			sourceTree = "<group>";
+		};
 		A7AAB6E21F1E013E008262BC = {
 			isa = PBXGroup;
 			children = (
@@ -215,10 +258,8 @@
 				A7F2D5A41F1F36AE003748F5 /* RootViewController.m */,
 				A7AAB6F41F1E013E008262BC /* ViewController.h */,
 				A7AAB6F51F1E013E008262BC /* ViewController.m */,
-				A7B5AE421F20868F008981A9 /* ImageVC.h */,
-				A7B5AE431F20868F008981A9 /* ImageVC.m */,
-				A7B5AE3F1F208434008981A9 /* ImageView.h */,
-				A7B5AE401F208434008981A9 /* ImageView.m */,
+				A78800741F5699BB002B42C9 /* TempVC */,
+				A78800641F56976D002B42C9 /* SYPageControlVC */,
 				A7B5AE371F20480C008981A9 /* SYPageControl */,
 				A7F2D5661F1F2F12003748F5 /* PageControlImages */,
 				A7AAB6EE1F1E013E008262BC /* Supporting Files */,
@@ -515,13 +556,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A78800731F569805002B42C9 /* LineVC.m in Sources */,
 				A7B5AE3A1F20480C008981A9 /* SYPageControl.m in Sources */,
+				A78800701F5697F2002B42C9 /* ImageVC.m in Sources */,
 				A7AAB6F61F1E013E008262BC /* ViewController.m in Sources */,
+				A788007A1F569A11002B42C9 /* ImageView.m in Sources */,
 				A7AAB6F31F1E013E008262BC /* AppDelegate.m in Sources */,
-				A7B5AE441F20868F008981A9 /* ImageVC.m in Sources */,
+				A78800771F5699CC002B42C9 /* TempViewController.m in Sources */,
+				A788006A1F5697CD002B42C9 /* NumberVC.m in Sources */,
+				A788006D1F5697DF002B42C9 /* SquareVC.m in Sources */,
 				A7AAB6F01F1E013E008262BC /* main.m in Sources */,
-				A7B5AE411F208434008981A9 /* ImageView.m in Sources */,
 				A7F2D5A51F1F36AE003748F5 /* RootViewController.m in Sources */,
+				A78800671F5697AF002B42C9 /* CirclePointVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
