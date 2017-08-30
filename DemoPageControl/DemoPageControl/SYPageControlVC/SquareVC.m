@@ -87,6 +87,7 @@
     SYPageControl *pageControl9 = [[SYPageControl alloc] initWithFrame:CGRectMake(10.0, (currentView.frame.origin.y + currentView.frame.size.height + 10.0), (self.view.frame.size.width - 10.0 * 2), 30.0)];
     [self.view addSubview:pageControl9];
     pageControl9.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.1];
+    pageControl9.hidesForSinglePage = YES;
     pageControl9.numberOfPages = 10;
     pageControl9.currentPage = 2;
     pageControl9.pageIndicatorColor = [UIColor greenColor];
@@ -101,7 +102,8 @@
     SYPageControl *pageControl10 = [[SYPageControl alloc] initWithFrame:CGRectMake(10.0, (currentView.frame.origin.y + currentView.frame.size.height + 10.0), (self.view.frame.size.width - 10.0 * 2), 30.0)];
     [self.view addSubview:pageControl10];
     pageControl10.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.1];
-    pageControl10.numberOfPages = 10;
+    pageControl10.hidesForSinglePage = YES;
+    pageControl10.numberOfPages = 1;
     pageControl10.currentPage = 2;
     pageControl10.pageIndicatorColor = [UIColor orangeColor];
     pageControl10.currentPageIndicatorColor = [UIColor blueColor];

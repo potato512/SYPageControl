@@ -66,7 +66,7 @@
     [self.view addSubview:pageControl2];
     pageControl2.tag = 10000;
     pageControl2.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.1];
-    pageControl2.numberOfPages = 10;
+    pageControl2.numberOfPages = 1;
     pageControl2.currentPage = 2;
     pageControl2.pageControlType = SYPageControlTypeCircle;
     pageControl2.pageSizeWidth = 15.0;

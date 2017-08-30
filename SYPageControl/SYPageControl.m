@@ -239,7 +239,7 @@
 // 重置视图属性
 - (void)reloadUIView
 {
-    if (_hidesForSinglePage)
+    if (_hidesForSinglePage && 1 == _numberOfPages)
     {
         // 单页时，隐藏
         [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
