@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "SYPageControl"
   s.version      = "1.1.0"
-  s.summary      = "A short description of SYPageControl."
+  s.summary      = "SYPageControl can be use with several styles for developer."
   s.homepage     = "https://github.com/potato512/SYPageControl"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "devZhang" => "zhangsy757@163.com" }
