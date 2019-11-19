@@ -23,6 +23,12 @@
 
 
 代码示例
+
+导入项目
+~~~ javascript
+pod 'SYPageControl'
+~~~
+
 ~~~ javascript
 // 导入头文件
 #import "SYPageControl.h"
