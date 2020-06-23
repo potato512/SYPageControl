@@ -84,9 +84,17 @@ typedef NS_ENUM(NSInteger, SYPageControlType)
 @property(nonatomic, assign) CGFloat pageSizeHeight;
 /// 页码大小-宽，默认6.0
 @property(nonatomic, assign) CGFloat pageSizeWidth;
-/// 适配图标大小，默认NO
+/// 页码大小-高，默认6.0
+@property(nonatomic, assign) CGFloat currentPageSizeHeight;
+/// 页码大小-宽，默认6.0
+@property(nonatomic, assign) CGFloat currentPageSizeWidth;
+/// 适配图标大小，默认NO（设置YES后，宽高pageSizeHeight,pageSizeWidth,currentPageSizeHeight,currentPageSizeHeight设置无效）
 @property (nonatomic, assign) BOOL shouldAutoresizingImage;
 
+/// 圆角属性，默认无
+@property (nonatomic, assign) CGFloat pageCornerRadius;
+///
+@property (nonatomic, assign) CGFloat currentPageCornerRadius;
 
 #pragma mark - 链式属性
 

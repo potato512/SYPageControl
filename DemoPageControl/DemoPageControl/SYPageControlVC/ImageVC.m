@@ -77,8 +77,26 @@
     pageControl6.pageIndicatorImage = [UIImage imageNamed:@"pageNumber_normal"];
     pageControl6.currentPageIndicatorImage = [UIImage imageNamed:@"pageNumber_selected"];
 //    pageControl6.transformScale = 2.0;
-    pageControl6.pageSizeWidth = pageControl6.pageSizeHeight = 12.0;
+    pageControl6.pageSizeWidth = pageControl6.pageSizeHeight = 8;
 //    pageControl6.showPageNumber = YES;
+    
+    currentView = pageControl6;
+        
+    SYPageControl *pageControl7 = [[SYPageControl alloc] initWithFrame:CGRectMake(10.0, (currentView.frame.origin.y + currentView.frame.size.height + 10.0), (self.view.frame.size.width - 10.0 * 2), 30.0)];
+    [self.view addSubview:pageControl7];
+    pageControl7.backgroundColor = [UIColor.greenColor colorWithAlphaComponent:0.2];
+    pageControl7.numberOfPages = 10;
+    pageControl7.currentPage = 2;
+    pageControl7.pageControlType = SYPageControlTypeImage;
+    pageControl7.pageIndicatorImage = [UIImage imageNamed:@"normalImage"];
+    pageControl7.currentPageIndicatorImage = [UIImage imageNamed:@"currentImage"];
+    pageControl7.shouldAutoresizingImage = YES;
+    pageControl7.pageMargin = 3;
+    pageControl7.pageSizeWidth = 8;
+    pageControl7.pageSizeHeight = 8;
+    pageControl7.currentPageSizeWidth = 48;
+    pageControl7.currentPageSizeHeight = 15;
+    pageControl7.showPageNumber = YES;
 }
 
 

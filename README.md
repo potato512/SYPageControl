@@ -92,6 +92,13 @@ pageControl.pages(15).page(10).pageScale(1.5).showPageIndex(YES).pageIndexColor(
 
 
 ### 修改完善
+* 20200623
+  * 版本号：1.1.1
+  * 修改优化
+    * 修改属性`shouldAutoresizingImage`逻辑，即YES时，其他宽高属性设置无效
+    * 新增属性：`currentPageSizeHeight`，`currentPageSizeWidth`，`pageCornerRadius`，`currentPageCornerRadius`
+
+
 * 20170830
   * 版本号：1.1.0
   * 修改优化
